@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebAudio Synth with Visual Feedback and Controls</title>
+    <style>
+        .key {
+            display: inline-block;
+            width: 40px;
+            height: 100px;
+            margin: 2px;
+            background-color: lightgray;
+            border: 1px solid black;
+            text-align: center;
+            line-height: 100px;
+            font-size: 18px;
+        }
+        .key.active {
+            background-color: yellow;
+        }
+        #controls {
+            margin: 20px 0;
+        }
+        .control-group {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="controls">
+        <div class="control-group">
+            <label for="waveShape">Wave Shape:</label>
+            <select id="waveShape">
+                <option value="sine">Sine</option>
+                <option value="square">Square</option>
+                <option value="sawtooth">Sawtooth</option>
+                <option value="triangle">Triangle</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <label for="gain">Gain (Volume):</label>
+            <input type="range" id="gain" min="0" max="1" step="0.01" value="0.5">
+        </div>
+        <div class="control-group">
+            <label for="frequencyModulation">Frequency Modulation:</label>
+            <input type="range" id="frequencyModulation" min="0" max="1000" step="1" value="0">
+        </div>
+    </div>
+    <div id="keyboard">
+        <div class="key" data-key="a">A</div>
+        <div class="key" data-key="w">W</div>
+        <div class="key" data-key="s">S</div>
+        <div class="key" data-key="e">E</div>
+        <div class="key" data-key="d">D</div>
+        <div class="key" data-key="f">F</div>
+        <div class="key" data-key="t">T</div>
+        <div class="key" data-key="g">G</div>
+        <div class="key" data-key="y">Y</div>
+        <div class="key" data-key="h">H</div>
+        <div class="key" data-key="u">U</div>
+        <div class="key" data-key="j">J</div>
+        <div class="key" data-key="k">K</div>
+    </div>
+
+    <script src="synth.js"></script>
+</body>
+</html>
+
